@@ -51,13 +51,11 @@ const config: HardhatUserConfig = {
     },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: getAccount(),
     },
     rinkeby: {
       url: getUrl(),
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: getAccount(),
     },
     mainnet: {
       url: "https://eth-mainnet.alchemyapi.io/v2/" + process.env.ALCHEMY_API_KEY,
